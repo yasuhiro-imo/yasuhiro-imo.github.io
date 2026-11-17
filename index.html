@@ -41,8 +41,6 @@
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Education</a></li>
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
                 <a class="social-icon" href="https://github.com/yasuhiro-imo" target="_blank"><i class="fab fa-github"></i></a>
-                <a class="social-icon" href="https://twitter.com/ImoYasuhiro" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a class="social-icon" href="https://www.facebook.com/yasuhiro.imo" target="_blank"><i class="fab fa-facebook-f"></i></a>
             </ul>
         </div>
     </nav>
@@ -55,23 +53,7 @@
                 <h1 class="mb-0">Yasuhiro <span class="text-primary">IMO</span></h1>
                 <div class="subheading" >
                     <a class="social-icon" href="https://github.com/yasuhiro-imo" target="_blank"><i class="fab fa-github"></i></a>
-                    <a class="social-icon" href="https://twitter.com/ImoYasuhiro" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a class="social-icon" href="https://www.facebook.com/yasuhiro.imo" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 </div>
-                <br>
-                <p class="lead">Sample Memo App => <a href="https://my-note-web-2020.web.app">My Note Web 2020</a></p>
-                <ul class="fa-ul mb-0">
-                    <li>
-                        <span class="fa-li"><i class="fas fa-check"></i></span>Built with Firebase and Firestore.
-                    </li>
-                    <li>
-                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                        <a href="https://github.com/yasuhiro-imo/my-note-web-2020" target="_blank">Source code on GitHub</a>
-                    </li>
-                    <br>
-                </ul>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/P5GmHex7uO0" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
             </div>
         </section>
         <hr class="m-0" />
@@ -161,5 +143,19 @@
         </section>
         <hr class="m-0" />
     </div>
+
+    <!-- Mobile menu toggle (Bootstrap JS is not loaded) -->
+    <script>
+        const toggler = document.querySelector('.navbar-toggler');
+        const menu = document.getElementById('navbarSupportedContent');
+        const setMenuOpen = (open) => {
+            menu.classList.toggle('show', open);
+            toggler.setAttribute('aria-expanded', String(open));
+        };
+        toggler.addEventListener('click', () => setMenuOpen(!menu.classList.contains('show')));
+        menu.querySelectorAll('.js-scroll-trigger').forEach((link) => {
+            link.addEventListener('click', () => setMenuOpen(false));
+        });
+    </script>
 </body>
 </html>
